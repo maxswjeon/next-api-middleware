@@ -6,8 +6,13 @@ type Params = {
 	userId: string;
 };
 
-export const GET = withAPIContext<Params>(async (req, ctx) => {
-	const session = withSession();
+export const GET = withAPIContext<Params>(
+	async (req, ctx) => {
+		const session = withSession();
 
-	return Response.json({});
-});
+		return Response.json({});
+	},
+	{
+		preRequest: [],
+	},
+);
